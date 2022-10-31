@@ -1,0 +1,171 @@
+/*Propriedades do Figma*/
+:root{
+    /*cores*/
+    --background-clr: #333;
+    --texto-clr: #fff;
+    --contraste-clr: #ff0000;
+    --sombra-clr: #222;
+    /*sombra*/
+    --sombra-padrao: 0px 0px 15px 10px rgba(0, 0, 0, 0.25);
+    /*transicao*/
+    --transicao: all 0.4s linear;
+}
+
+/*Estilos gerais e Reset*/
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+textarea:focus, input:focus, select:focus {
+    outline: 0;
+} 
+
+h1{
+    font-size: 28px;
+    text-align: center;
+    color: var(--texto-clr);
+}
+label{
+    color: var(--texto-clr);
+    font-size: 21px;
+}
+body{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-clr);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+input{
+    width: 347px;
+    height: 40px;
+    color: var(--texto-clr);
+    font-size: 18px;
+    padding: 0px 15px;
+    background: none;
+    border: none;
+    margin-bottom: 15px;
+}
+textarea{
+    background: none;
+    color: var(--texto-clr);
+    border: none;
+    font-size: 20px;
+    resize: none;
+    text-align: start;
+    max-width: 60%;
+}
+
+
+/*Conteúdo*/
+.calculadora{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 442px;
+    height: 390px;
+
+    box-shadow: var(--sombra-padrao);
+    z-index: 100;
+    transition: var(--transicao);
+}
+.itens-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.btn-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.btn-container button{
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    color: var(--background-clr);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/*info*/
+.info-container{
+    margin-top: 15px;
+}
+.info-svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*RESULTADO IMC*/
+.resultado-imc{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 442px;
+    height: 500px;
+
+    box-shadow: var(--sombra-padrao);
+
+    display: none;
+    transition: var(--transicao);
+}
+
+circle{
+    fill: none;
+    stroke: var(--contraste-clr);
+    stroke-width: 5;
+    transform: translate(5px, 5px);
+    border: none;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+
+circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: var(--sombra-clr);
+}
+
+circle:nth-child(2){
+    stroke: var(--contraste-clr);
+    transition: stroke-dashoffset 0.8s linear ;
+}
+
+.imc-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+table{
+    display: flex;
+    justify-content: center;
+
+    border-spacing: 30px 8px;
+    color: var(--texto-clr);
+}
+td:nth-child(1){
+    font-weight: bold;
+}
+
+.arrowBack-container{
+    display: flex;
+    justify-content: start;
+    margin-top: 24px;
+    align-items: center;
+    gap: 14px;
+    color: var(--texto-clr);
+    font-weight: bold;
+    cursor: pointer;
+}
