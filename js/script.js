@@ -4,11 +4,11 @@ const telaResultado = document.getElementById("resultado");
 const inputAltura = document.getElementById("altura");
 const inputPeso = document.getElementById("peso");
 const imcTexto = document.getElementById("imcTexto");
-
 //VARIAVEIS
 let imc = 0;
 
 //FUNÇÃO PRINCIPAL
+
 function calcularImc(){
     
     const metros = inputAltura.value/100;

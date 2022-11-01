@@ -1,13 +1,4 @@
-/*RESET*/
-*{
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-textarea:focus, input:focus, select:focus {
-    outline: 0;
-} 
-/*PROPRIEDADES DO FIGMA*/
+/*Propriedades do Figma*/
 :root{
     /*cores*/
     --background-clr: #333;
@@ -19,15 +10,24 @@ textarea:focus, input:focus, select:focus {
     /*transicao*/
     --transicao: all 0.4s linear;
 }
-/*ESTILOS GERAIS*/
-h1,h2,h3,input,label,textarea,table,.arrowBack-container{
-    color: var(--texto-clr);
+
+/*Estilos gerais e Reset*/
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
 }
+textarea:focus, input:focus, select:focus {
+    outline: 0;
+} 
+
 h1{
     font-size: 28px;
     text-align: center;
+    color: var(--texto-clr);
 }
 label{
+    color: var(--texto-clr);
     font-size: 21px;
 }
 body{
@@ -41,6 +41,7 @@ body{
 input{
     width: 347px;
     height: 40px;
+    color: var(--texto-clr);
     font-size: 18px;
     padding: 0px 15px;
     background: none;
@@ -49,6 +50,7 @@ input{
 }
 textarea{
     background: none;
+    color: var(--texto-clr);
     border: none;
     font-size: 20px;
     resize: none;
@@ -91,6 +93,18 @@ textarea{
     font-size: 21px;
     font-weight: bold;
 }
+
+/*info*/
+.info-container{
+    margin-top: 15px;
+}
+.info-svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*RESULTADO IMC*/
 .resultado-imc{
     position: absolute;
     left: 0;
@@ -139,6 +153,7 @@ table{
     justify-content: center;
 
     border-spacing: 30px 8px;
+    color: var(--texto-clr);
 }
 td:nth-child(1){
     font-weight: bold;
@@ -150,6 +165,7 @@ td:nth-child(1){
     margin-top: 24px;
     align-items: center;
     gap: 14px;
+    color: var(--texto-clr);
     font-weight: bold;
     cursor: pointer;
 }
