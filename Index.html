@@ -1,105 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMC CALC</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMC CALC</title>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="switch-toggle">
-
-        <div class="svg-sun"></div>
-
-        <span></span>
-
-        <div class="svg-moon"></div>
-
-    </div>
 
     <div class="calculadora" id="calculadora">
         <div class="itens-container">
-            <h1>CALCULADORA DE IMC</h1>
+        <h1>CALCULADORA DE IMC</h1>
             
-                <div class="input-container">
-                    <label for="altura">Altura:</label>
-                    <input type="text" id="altura" placeholder="Digite sua altura ex: 1.70m" 
-                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/[\D]+/g, '');" >
+        <div class="input-container">
+            <label for="altura">Altura:</label>
+            <input type="text" id="altura" placeholder="Digite sua altura ex: 1.70m" 
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/[\D]+/g, '');" >
 
-                    <label for="peso">Peso:</label>
-                    <input type="text" id="peso" placeholder="Digite seu peso ex: 60kg" 
-                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/[\D]+/g, '');" >
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso" placeholder="Digite seu peso ex: 60kg" 
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/[\D]+/g, '');" >
                     
-                </div>
+        </div>
 
-                <div class="btn-container">
-                    <button id="confirmar" onclick="calcularImc()" >Enviar</button>
-                    <button id="limpar" onclick="allClear()" >AC</button>
-                </div>
-
-            <div class="info-container">
-                <div class="info-svg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 16V12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 8H12.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    
-                </div>
-            </div>
+        <div class="btn-container">
+            <button id="confirmar" onclick="calcularImc()" >Enviar</button>
+            <button id="limpar" onclick="allClear()" >AC</button>
         </div>
     </div>
 
     <div class="resultado-imc" id="resultado">
         <div class="itens-container">
-
-            <h1>Resultado</h1>
+        <h1>Resultado</h1>
             
 
-            <div class="imc-container">
+        <div class="imc-container">
 
-                <div class="circle-container">
-                    <svg>
-                        <circle cx="50" cy="50" r="50"></circle>
-                        <circle cx="50" cy="50" r="50" id="circle-imc"></circle>
-                    </svg>
-                </div>
+        <div class="circle-container">
+            <svg>
+                <circle cx="50" cy="50" r="50"></circle>
+                <circle cx="50" cy="50" r="50" id="circle-imc"></circle>
+            </svg>
+        </div>
+            <textarea id="imcTexto" cols="30" rows="3" readonly ></textarea>
+        </div>
 
-                <textarea id="imcTexto" cols="30" rows="3" readonly ></textarea>
-            </div>
+        <table>
+            <tr>
+                <td id="imc">Menor que 18</td>
+                <td id="classificacao">Abaixo do peso ideal</td>
+            </tr>
+            <tr>
+                <td v>Entre 18 e 24</td>
+                <td id="classificacao">No peso ideal</td>
+            </tr>
+            <tr>
+                <td id="imc">Entre 25 e 29</td>
+                <td id="classificacao">Acima do peso</td>
+            </tr>
+            <tr>
+                <td id="imc">Entre 30 e 24</td>
+                <td id="classificacao">Obesidade classe 1</td>
+            </tr>
+            <tr>
+                <td>Entre 35 e 39</td>
+                <td id="classificacao">Obesidade classe 2</td>
+            </tr>
+            <tr>
+                <td id="imc">Maior que 40</td>
+                <td id="classificacao">Obesidade classe 3</td>
+            </tr>
+        </table>
 
-            <table>
-                    <tr>
-                        <td id="imc">Menor que 18</td>
-                        <td id="classificacao">Abaixo do peso ideal</td>
-                    </tr>
-                    <tr>
-                        <td v>Entre 18 e 24</td>
-                        <td id="classificacao">No peso ideal</td>
-                    </tr>
-                    <tr>
-                        <td id="imc">Entre 25 e 29</td>
-                        <td id="classificacao">Acima do peso</td>
-                    </tr>
-                    <tr>
-                        <td id="imc">Entre 30 e 24</td>
-                        <td id="classificacao">Obesidade classe 1</td>
-                    </tr>
-                    <tr>
-                        <td>Entre 35 e 39</td>
-                        <td id="classificacao">Obesidade classe 2</td>
-                    </tr>
-                    <tr>
-                        <td id="imc">Maior que 40</td>
-                        <td id="classificacao">Obesidade classe 3</td>
-                    </tr>
-            </table>
-
-            <div class="arrowBack-container" onclick="back()">
+        <div class="arrowBack-container" onclick="back()">
+            
                 <svg width="24" height="24" viewBox="0 0 145 145" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <rect width="145" height="145" fill="url(#pattern0)"/>
                     <defs>
@@ -111,10 +91,11 @@
                     </svg>                    
 
                 <p>Voltar</p>
-            </div>
-                
-        </div>
+
+    </div>  
     </div>
+    </div>
+
     <script src="./js/script.js"></script>
 </body>
 </html>
